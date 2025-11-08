@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
 } else {
@@ -11,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.scrollTo(0, 0);
 
+    // --- Hamburger Menu ---
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
@@ -27,34 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-=======
-if (history.scrollRestoration) {
-    history.scrollRestoration = 'manual';
-} else {
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
+
+    // --- Theme Toggle ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved theme in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'light') {
+            themeToggle.checked = true;
+        }
     }
-}
 
-document.addEventListener('DOMContentLoaded', () => {
-    
-    window.scrollTo(0, 0);
-
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-active');
-        hamburger.classList.toggle('toggle');
+    // Toggle theme on click
+    themeToggle.addEventListener('change', () => {
+        if (themeToggle.checked) {
+            body.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
     });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (navLinks.classList.contains('nav-active')) {
-                navLinks.classList.remove('nav-active');
-                hamburger.classList.remove('toggle');
-            }
-        });
-    });
->>>>>>> befa7ce9bff5882fa09b02af24963bfdf10d4e9e
 });

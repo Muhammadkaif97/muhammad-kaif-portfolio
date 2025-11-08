@@ -10,15 +10,33 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+
+<!-- We add data-theme="dark" by default -->
+<body data-theme="dark">
 
     <header>
         <nav>
             
-            <a href="#home" class="logo">
-                <img src="Assets/logo.png" alt="Muhammad Kaif Logo">
-                <span>Kaify</span>
-            </a>
+            <div class="nav-left">
+                <a href="#home" class="logo">
+                    <img src="Assets/logo.png" alt="Muhammad Kaif Logo">
+                    <span>Kaify</span>
+                </a>
+
+                <!-- ==================
+                     NEW THEME TOGGLE
+                =================== -->
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="theme-toggle">
+                        <input type="checkbox" id="theme-toggle" />
+                        <div class="slider round">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                        </div>
+                    </label>
+                </div>
+                <!-- ================== -->
+            </div>
             
 
             <ul class="nav-links">
