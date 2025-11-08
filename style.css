@@ -279,6 +279,7 @@ a {
     border-radius: 5px;
     transition: all var(--transition-speed);
     margin-top: 20px;
+    margin-bottom: 20px; /* <--- THIS IS THE FIX */
     border: 1px solid var(--accent-aqua);
 }
 
