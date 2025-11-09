@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     window.scrollTo(0, 0);
 
-    // --- Hamburger Menu ---
+  
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Toggle theme on click
+    
     themeToggle.addEventListener('change', () => {
         if (themeToggle.checked) {
             body.setAttribute('data-theme', 'light');
